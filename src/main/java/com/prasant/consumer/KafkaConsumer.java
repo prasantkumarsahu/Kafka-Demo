@@ -14,13 +14,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class KafkaConsumer {
 
-	@KafkaListener(topics = "prasant", groupId = "myGroup")
+	@KafkaListener(topics = "messages", groupId = "myGroup", containerFactory = "stringKafkaListenerContainerFactory")
 	public void consumeMsg(String msg){
-		log.info("Consuming message from prasant Topic :: {}", msg);
+		log.info("Consuming message from messages Topic :: {}", msg);
 	}
 
-	@KafkaListener(topics = "prasant", groupId = "myGroup")
+	@KafkaListener(topics = "objects", groupId = "myGroup", containerFactory = "jsonKafkaListenerContainerFactory")
 	public void consumeJsonMsg(Student student){
-		log.info("Consuming student from prasant Topic :: {}", student.toString());
+		log.info("Consuming student from objects Topic :: {}", student.toString());
 	}
 }

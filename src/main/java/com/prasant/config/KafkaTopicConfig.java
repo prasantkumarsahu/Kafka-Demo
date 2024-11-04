@@ -14,9 +14,16 @@ import org.springframework.kafka.config.TopicBuilder;
 public class KafkaTopicConfig {
 
 	@Bean
-	public NewTopic myTopic() {
+	public NewTopic messagesTopic() {
 		return TopicBuilder
-				.name("prasant")
+				.name("messages")
+				.build();
+	}
+
+	@Bean
+	public NewTopic objectsTopic(){
+		return TopicBuilder
+				.name("objects")
 				.build();
 	}
 }

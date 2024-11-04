@@ -1,0 +1,46 @@
+# Ignore build directories
+target/
+out/
+build/
+
+# Ignore IDE specific files
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+
+# Ignore log files
+*.log
+
+# Ignore temporary files
+*.tmp
+*.temp
+
+# Ignore local configuration files
+*.local
+
+# Ignore the Maven wrapper jar
+mvnw
+mvnw.cmd
+**/.mvn/
+
+# Ignore .git directory
+.git/
+
+# Ignore dependency directories
+node_modules/
+vendor/
+
+# Ignore any other files that are not needed
+*.class
+*.jar
+*.war
+*.zip
+*.tar
+*.tgz
+.DS_Store
+
+# Exclude any files that you want to include in the Docker image
+!src/main/resources/application.yml
+!src/main/resources/application.properties

@@ -5,10 +5,7 @@ import com.prasant.producer.KafkaJsonProducer;
 import com.prasant.producer.KafkaProducer;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Author: Prasant
@@ -36,5 +33,10 @@ public class MessageController {
 		kafkaJsonProducer.sendMessage(student);
 
 		return ResponseEntity.ok("Student data queued successfully!");
+	}
+
+	@GetMapping
+	public String testApp(){
+		return "App is working!";
 	}
 }
